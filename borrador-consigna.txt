@@ -1,0 +1,33 @@
+proyecto de una lista de tareas (to do)
+
+se quiere hacer un CRUD de tablero
+    - tasks
+    - nombre
+    - propietario
+
+se quiere hacer un CRUD de tasks
+    - titulo
+    - descripcion
+    - prioridad (bajo, medio, alto)
+    - fecha de inicio y fin
+    - labels para  agruparlos
+    - estado (a realizar, en proceso, exito, fallo)
+
+filtrar u organizar las task por labels, estado, fecha, prioridad
+
+
+
+------------ SI HACEMOS SESIONES ------------------
+cuando hagamos login cada usuario tenga sus task
+se pueda compartir/dar permisos con otros los tableros
+
+se quiere hacer un CRUD de usuario
+    - nombre y apellido
+    - username
+    - contraseña
+    - tableros
+
+se tabla de tableroXusuario
+    -tablero
+    -usuario
+    -permiso
