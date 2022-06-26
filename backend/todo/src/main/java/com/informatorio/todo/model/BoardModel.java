@@ -28,10 +28,11 @@ public class BoardModel {
     public String getName() {return name;}
     public List<TaskModel> getTasks() {return tasks;}
 
+    public void setName(String name) {this.name = name;}
+    public void setTask(TaskModel task) {this.tasks.add(task);}
 
     public BoardModel() {}
-    public BoardModel(String name, List<TaskModel> tasks) {
+    public BoardModel(String name) {
         this.name = name;
-        this.tasks = tasks;
     }
 }
