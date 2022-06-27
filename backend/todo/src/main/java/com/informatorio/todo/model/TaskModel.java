@@ -1,8 +1,8 @@
 package com.informatorio.todo.model;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -27,7 +27,7 @@ public class TaskModel {
     private LocalDate creationDate = LocalDate.now();
     private LocalDate finishDate;
     @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    private List<LabelModel> labels = new ArrayList<>();
+    private Set<LabelModel> labels = new HashSet<>();
     @ManyToOne(fetch = FetchType.LAZY)
     private BoardModel board;
 
@@ -37,15 +37,14 @@ public class TaskModel {
     public String getPriority() {return priority;}
     public LocalDate getCreationDate() {return creationDate;}
     public LocalDate getFinishDate() {return finishDate;}
-    public List<LabelModel> getLabels() {return labels;}
+    public Set<LabelModel> getLabels() {return labels;}
     public BoardModel getBoard() {return board;}
 
     public void setTitle(String title) {this.title = title;}
     public void setDescription(String description) {this.description = description;}
     public void setPriority(String priority) {this.priority = priority;}
-    public LocalDate setFinishDate(String finishDate) {
+    public void setFinishDate(String finishDate) {
         this.finishDate = LocalDate.parse(finishDate);
-        return this.finishDate;
     }
     public void setLabels(LabelModel label) {this.labels.add(label);}
     public void setBoard(BoardModel board) {this.board = board;}
@@ -55,6 +54,6 @@ public class TaskModel {
         this.title = title;
         this.description = description;
         this.priority = priority;
-        this.finishDate = setFinishDate(finishDate);
+        setFinishDate(finishDate);
     }
 }
