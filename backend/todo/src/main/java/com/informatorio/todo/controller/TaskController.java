@@ -49,7 +49,7 @@ public class TaskController {
         TaskModel newTask = new TaskModel(infoTask.getTitle(),
             infoTask.getDescription(),
             infoTask.getPriority(),
-            infoTask.getFinalyDate());
+            infoTask.getFinishDate());
 
         Optional<BoardModel> board = boardrepository.findById(board_id);
         if(!board.isPresent()) return null;

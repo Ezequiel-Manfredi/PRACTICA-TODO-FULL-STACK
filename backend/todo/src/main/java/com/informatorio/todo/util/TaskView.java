@@ -15,7 +15,7 @@ public class TaskView {
     private String description;
     private String priority;
     private String creationDate;
-    private String finalyDate;
+    private String finishDate;
     private List<String> labels;
 
     public Long getId() {return id;}
@@ -23,7 +23,7 @@ public class TaskView {
     public String getDescription() {return description;}
     public String getPriority() {return priority;}
     public String getCreationDate() {return creationDate;}
-    public String getFinalyDate() {return finalyDate;}
+    public String getFinishDate() {return finishDate;}
     public List<String> getLabels() {return labels;}
     
     public TaskView(){}
@@ -33,7 +33,7 @@ public class TaskView {
         this.description = task.getDescription();
         this.priority = task.getPriority();
         this.creationDate = task.getCreationDate().toString();
-        this.finalyDate = task.getFinalyDate().toString();
+        this.finishDate = task.getFinishDate().toString();
         this.labels = task.getLabels().stream().map(l -> l.getName()).collect(Collectors.toList());
     }
 }

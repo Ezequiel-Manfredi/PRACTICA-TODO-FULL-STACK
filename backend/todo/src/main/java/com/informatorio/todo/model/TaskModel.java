@@ -25,7 +25,7 @@ public class TaskModel {
     private String description;
     private String priority;
     private LocalDate creationDate = LocalDate.now();
-    private LocalDate finalyDate;
+    private LocalDate finishDate;
     @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private List<LabelModel> labels = new ArrayList<>();
     @ManyToOne(fetch = FetchType.LAZY)
@@ -36,25 +36,25 @@ public class TaskModel {
     public String getDescription() {return description;}
     public String getPriority() {return priority;}
     public LocalDate getCreationDate() {return creationDate;}
-    public LocalDate getFinalyDate() {return finalyDate;}
+    public LocalDate getFinishDate() {return finishDate;}
     public List<LabelModel> getLabels() {return labels;}
     public BoardModel getBoard() {return board;}
 
     public void setTitle(String title) {this.title = title;}
     public void setDescription(String description) {this.description = description;}
     public void setPriority(String priority) {this.priority = priority;}
-    public LocalDate setFinalyDate(String finalyDate) {
-        this.finalyDate = LocalDate.parse(finalyDate);
-        return this.finalyDate;
+    public LocalDate setFinishDate(String finishDate) {
+        this.finishDate = LocalDate.parse(finishDate);
+        return this.finishDate;
     }
     public void setLabels(LabelModel label) {this.labels.add(label);}
     public void setBoard(BoardModel board) {this.board = board;}
 
     public TaskModel() {}
-    public TaskModel(String title, String description, String priority, String finalyDate) {
+    public TaskModel(String title, String description, String priority, String finishDate) {
         this.title = title;
         this.description = description;
         this.priority = priority;
-        this.finalyDate = setFinalyDate(finalyDate);
+        this.finishDate = setFinishDate(finishDate);
     }
 }
